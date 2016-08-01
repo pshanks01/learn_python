@@ -9,3 +9,4 @@ def subtract(a,b):
     return a - b
 
 print add(3,4)
+print subtract(32,89)
