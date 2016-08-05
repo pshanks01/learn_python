@@ -28,28 +28,8 @@ def remove_adjacent(nums):
 # pass of both lists.
 def linear_merge(list1, list2):
   # +++your code here+++
-  a = len(list1)
-  b = len(list2)
-  if a > b or a == b:
-    biglist = list1
-    smlist = list2
-  else:
-    biglist =  list2
-    smlist = list1
 
-  print "biglist: ", biglist
-  print "smlist: ", smlist
-  print "iteration range: ", range(len(biglist)-1, -1, -1)
-  for i in range(len(biglist)-1, -1, -1):
-    item = smlist[-1]
-    print "i=%s: Comparing %s with %s and %s" %(i,item,biglist[i], biglist[i-1])
-    if item < biglist[i] and item > biglist[i-1]:
-      biglist.insert(i,smlist.pop(-1))
-
-  print biglist
-  print smlist
-
-  return smlist + biglist
+  return sorted(list1 + list2)
 
 # Note: the solution above is kind of cute, but unforunately list.pop(0)
 # is not constant time with the standard python list implementation, so
